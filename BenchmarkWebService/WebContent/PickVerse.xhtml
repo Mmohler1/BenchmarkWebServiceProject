@@ -1,0 +1,30 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html">
+
+<h:head>
+	<title><ui:insert name="title">Pick Verse</ui:insert></title>
+</h:head>
+	<h:body>
+		
+
+			<br/>
+			<div align="center">
+			<h2>Please enter the Book Name, Chapter number, and Verse Number to get your King James Bible verse.</h2>
+			<br/>
+			<!-- The form for Bible Verse -->
+			
+			<h:form>
+				Book Name: <h:inputText value="#{bible.book}" title="" id="book"/><h:message for="book"/><br/><!-- Bible Class in Managed Bean -->
+				Bible Chapter: <h:inputText value="#{bible.chap}" title="" id="chap"/><h:message for="chap"/><br/>
+				Bible Verse: <h:inputText value="#{bible.verse}" title="" id="verse"/><h:message for="verse"/><br/>
+				
+				<h:commandButton action="#{formController.onVerse(bible)}" value="Get Verse" /> 
+			</h:form>
+			<h:messages/> 
+			</div>
+
+	</h:body>	
+</html>
